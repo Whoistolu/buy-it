@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+ruby "3.2.4"
+
 gem "rails", "~> 8.0.4"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -8,6 +10,10 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
+
+# --- Auth ---
+gem "devise"                  # handles user accounts, password hashing, etc.
+gem "devise-jwt"              # extends Devise to issue and validate JWT tokens
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -33,9 +39,10 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-# gem "rack-cors"
+gem "rack-cors"
 
 group :development, :test do
+  gem 'dotenv-rails'          # loads .env file so I can store secrets locally
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
