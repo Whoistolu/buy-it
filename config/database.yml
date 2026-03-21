@@ -82,7 +82,7 @@ production:
   primary: &primary_production
     <<: *default
     database: buy_it_production
-    username: buy_it
+    username: <%= ENV["BUY_IT_DATABASE_USERNAME"] %>
     password: <%= ENV["BUY_IT_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
