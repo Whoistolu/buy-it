@@ -5,6 +5,14 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  match "/404", to: "application#not_found",    via: :all
+  match "/422", to: "application#unprocessable", via: :all
+  match "/500", to: "application#bad_request",   via: :all
+
+  namespace :api do
+    namespace :v1 do
+      # Catch-all for unmatched API routes
+      match "*path", to: "application#not_found", via: :all
+    end
+  end
 end
