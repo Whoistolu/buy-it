@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::API
-
   # --- Error handling ---
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from ActiveRecord::RecordInvalid,  with: :unprocessable
@@ -7,9 +6,9 @@ class ApplicationController < ActionController::API
 
   private
 
-  def not_found(e)
+  def not_found(e = nil)
     render json: {
-      errors: [{ code: "not_found", detail: e.message }]
+      errors: [{ code: "not_found", detail: e&.message || "The requested resource was not found" }]
     }, status: :not_found
   end
 
