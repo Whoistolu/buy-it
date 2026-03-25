@@ -206,8 +206,6 @@ GEM
     raabro (1.4.0)
     racc (1.8.1)
     rack (3.2.4)
-    rack-attack (6.7.0)
-      rack (>= 1.0, < 4)
     rack-cors (3.0.0)
       logger
       rack (>= 3.0.14)
@@ -315,9 +313,9 @@ GEM
       ostruct
     stringio (3.2.0)
     thor (1.5.0)
-    thruster (0.1.18-aarch64-linux)
-    thruster (0.1.18-arm64-darwin)
-    thruster (0.1.18-x86_64-linux)
+    thruster (0.1.20-aarch64-linux)
+    thruster (0.1.20-arm64-darwin)
+    thruster (0.1.20-x86_64-linux)
     timeout (0.6.0)
     tsort (0.2.0)
     tzinfo (2.0.6)
@@ -355,7 +353,6 @@ DEPENDENCIES
   kamal
   pg (~> 1.1)
   puma (>= 5.0)
-  rack-attack
   rack-cors
   rails (~> 8.0.4)
   rubocop-rails-omakase
